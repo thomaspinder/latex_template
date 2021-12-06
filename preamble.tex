@@ -1,0 +1,192 @@
+\setlength{\parindent}{0pt} %
+\setlength{\parskip}{5pt} %
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xspace}
+
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage[toc, page]{appendix}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{natbib}
+
+\usepackage{nicefrac}       %
+\usepackage{microtype}      %
+\usepackage[acronym, nopostdot, nogroupskip, nohypertypes={acronym,notation}]{glossaries}
+\makeglossaries
+\glsaddall
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{dsfont} %
+\usepackage{placeins} %
+\usepackage{rotating} %
+\usepackage{lineno} % Adds line numbers to the document
+\usepackage{etoolbox} % re
+\usepackage{cancel} % Enable the \cancel{} of a term in an equation.
+\usepackage{fancyhdr}
+\usepackage{lastpage} % Enable page i of n style footers
+% Page geometry
+\usepackage{geometry}
+\geometry{
+a4paper,
+left=30mm,
+right=30mm,
+top=25mm,
+bottom=20mm
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tikz/Tikzplotlib 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{tikz, pgfplots, pgfplotstable}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{grid style=none}
+\pgfplotsset{every x tick label/.append style={font=\tiny, yshift=0.5ex}}
+\pgfplotsset{every y tick label/.append style={font=\tiny, xshift=0.5ex}}
+\pgfplotsset{every x axis label/.append style={font=\tiny}}
+\pgfplotsset{every y axis label/.append style={font=\tiny}}
+\pgfplotsset{compat=newest,
+    scale only axis=true,
+    width=0.6\textwidth,
+    height=0.3\textwidth,
+    max space between ticks=25pt,
+    try min ticks=5,
+    every axis/.style={
+        axis y line=left,
+        axis x line=bottom,
+        axis line style={thick,->,>=latex, shorten >=-.4cm}
+    },
+    every axis plot/.append style={thick},
+    tick style={black, thick},
+    scaled ticks=false
+}
+\usetikzlibrary{external}
+\usetikzlibrary{pgfplots.colormaps}
+\newlength\figurewidth
+\newlength\figureheight
+
+
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1} 
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[rgb]{0.709, 0.070, 0.105},
+    citecolor=[rgb]{0.709, 0.070, 0.105},
+    filecolor=magenta,      
+    urlcolor=[rgb]{0.709, 0.070, 0.105},
+}
+\usepackage[nameinlink]{cleveref} % When \ref is called, automatically detect the referred quantity's type.
+
+
+\usepackage{thmtools}
+\declaretheoremstyle[
+notefont=\bfseries, 
+notebraces={(}{)},
+bodyfont=\normalfont\itshape,
+headformat=\NAME~\NUMBER:\NOTE,
+spacebelow=\parsep,
+spaceabove=\parsep,
+mdframed={
+    backgroundcolor=blue!2, 
+    linecolor=blue!20, 
+    innertopmargin=6pt,
+    roundcorner=20pt, 
+    innerbottommargin=6pt, 
+    skipabove=\parsep, 
+    skipbelow=\parsep,
+    nobreak=true} 
+]{BoldParanthesesNoted}
+
+\declaretheorem[style=BoldParanthesesNoted, numberwithin=section]{theorem}
+\declaretheorem[name=Definition, style=BoldParanthesesNoted, numberwithin=section]{definition}
+\declaretheorem[name=Example, style=BoldParanthesesNoted, numberwithin=section]{example}
+
+\usepackage{algorithm}
+
+\usepackage{algorithmic}
+\let\Algorithm\algorithm
+\renewcommand\algorithm[1][]{\Algorithm[#1]\setstretch{1.2}}
+
+\usepackage{listings}
+\usepackage{xparse}
+\NewDocumentCommand{\codeword}{v}{%
+\texttt{\textcolor{OliveGreen}{#1}}%
+}
+
+\lstset{language=python,keywordstyle={\bfseries \color{OliveGreen}}}
+
+\usepackage{tikz,tikz-3dplot}
+\tdplotsetmaincoords{60}{120}
+\usetikzlibrary{topaths,calc,bayesnet, arrows}
+\usepackage{subcaption}
+
+\usepackage{caption} 
+\captionsetup[table]{skip=4pt}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makecell} %
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Handle line numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Patches up the line number in maths environments
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+\expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+\expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+\renewenvironment{#1}%
+                    {\linenomath\csname old#1\endcsname}%
+                    {\csname oldend#1\endcsname\endlinenomath}%
+}%
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+\patchAmsMathEnvironmentForLineno{#1}%
+\patchAmsMathEnvironmentForLineno{#1*}%
+}%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{flalign}%
+\patchBothAmsMathEnvironmentsForLineno{alignat}%
+\patchBothAmsMathEnvironmentsForLineno{gather}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+
+% Supresses line numbering on Section headers
+\makeatletter
+\patchcmd{\@startsection}{\@ifstar}{\nolinenumbers\@ifstar}{}{}
+\patchcmd{\@xsect}{\ignorespaces}{\linenumbers\ignorespaces}{}{}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End line number formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Add a blank page before references
+% \pretocmd{\bibliography}{\nolinenumbers}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Apply fancy formatting to all pages - removes header and places text in footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}% Set default page style to fancy
+\renewcommand{\headrulewidth}{0pt}% Remove header rule
+\fancyhead{}% Remove all header contents
+\rfoot{\small{Amazon Confidential}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ToDo notes setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setuptodonotes{color=BrickRed!10, textcolor=BrickRed, linecolor=BrickRed, bordercolor=BrickRed}
+\newcommand{\rewrite}[2]{\todo[color=ForestGreen!10, textcolor=ForestGreen, linecolor=ForestGreen, bordercolor=ForestGreen, inline, noinlinepar, inlinewidth=#1,size=\normalsize]{#2}}
+\newcommand{\addresult}[2]{\todo[color=TealBlue!10, textcolor=TealBlue, linecolor=TealBlue, bordercolor=TealBlue, inline, noinlinepar, inlinewidth=#1,size=\normalsize]{#2}}
+\newcommand{\thought}[1]{\todo[color=BurntOrange!10, textcolor=BurntOrange, linecolor=BurntOrange, bordercolor=BurntOrange, inline, noinlinepar,size=\normalsize]{#1}}
+

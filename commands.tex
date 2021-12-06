@@ -1,0 +1,228 @@
+\usepackage{xcolor}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\UK}{United Kingdom}
+\newcommand{\ith}{$i^{\text{th}}$\xspace}
+\newcommand{\nth}[1]{$#1^{\text{th}}$\xspace}
+\newcommand{\TP}[1]{{\textbf{\color{red} TP}: \color{red}#1}}
+\newcommand{\cn}[1]{\textbf{{\color{blue}(Chris: #1)}}} 
+\definecolor{midnightblue}{rgb}{0.15, 0.15, 0.5}
+\newcommand{\purpose}[1]{\textbf{\textit{\color{midnightblue}Purpose: #1}}}
+\newcommand{\option}[1]{\textbf{\textit{\color{teal}Option: #1}}}
+\newcommand{\alternatic}[1]{\textbf{\textit{\color{teal}Alternative: #1}}}
+\newcommand{\question}[1]{{\textbf{\color{dkgreen} QUESTION}: \color{dkgreen}#1}}
+\newcommand{\complete}{\textbf{\color{dkgreen}Section complete}}
+\newcommand{\subcomplete}{\textbf{\color{dkgreen}Subection complete}}
+\newcommand{\tabref}[1]{Table \ref{#1}}
+\newcommand{\figref}[1]{Figure \ref{#1}}
+\newcommand{\secref}[1]{Section \ref{#1}}
+\newcommand{\algref}[1]{Algorithm \ref{#1}}
+\newcommand{\appref}[1]{Appendix \ref{#1}}
+\newcommand{\thmref}[1]{Theorem \ref{#1}}
+\newcommand{\defref}[1]{Definition \ref{#1}}
+
+\newcommand{\dby}[1]{\mathrm{d}{#1}}
+\newcommand{\rmd}{\mathrm{d}}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\newcommand{\poi}{\text{Poisson}}
+
+\newcommand{\opspan}{\operatorname{span}}
+\newcommand{\logdet}{\operatorname{logdet}}
+\newcommand{\nystrom}{Nystr\"{o}m}
+\newcommand{\trace}{\text{trace}}
+
+
+\newcommand{\generaldataset}{\mathcal{D} = (X, Y) = \left\{\mathbf{x}_{i}, y_{i} | i=1, \ldots N\right\}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\z}{\mathbf{z}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\xx}{\mathbf{x}^{\star}}
+\newcommand{\Xx}{\mathbf{X}^{\star}}
+\newcommand{\Y}{\mathbf{y}}
+\newcommand{\y}{y}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\yx}{y_*}
+\newcommand{\noise}{\epsilon}
+
+\newcommand{\chol}{\operatorname{chol}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\V}{\mathrm{Var}}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\Expect}[1]{\mathbb{E} \left[{#1}\right]}
+\newcommand{\Expects}[2]{\mathbb{E}_{{#1}} \left[{#2}\right]}
+\newcommand{\Variance}[2]{\mathbb{V}_{{#1}} \left[{#2}\right]}
+\newcommand{\cov}{\operatorname{cov}}
+\newcommand{\Vars}[2]{\mbox{Var}_{{#1}} \left[{#2}\right]}
+\newcommand{\Prob}[1]{\mathbb{P} \left({#1}\right)}
+\newcommand{\Probs}[2]{\mathbb{P}_{#1} \left({#2}\right)}
+\newcommand{\Abs}[1]{\left\vert{#1}\right\vert}
+\newcommand{\Norm}[1]{\left\vert\left\vert{#1}\right\vert\right\vert}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand\myeq{\mkern1.5mu{=}\mkern1.5mu} %
+
+
+
+\newcommand{\gp}{\mathcal{GP}}
+\newcommand{\GP}{\mathcal{GP}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfx}{\mathbf{f}_{\star}}
+\newcommand{\bfu}{\mathbf{f}_{\u}}
+
+\newcommand{\meanfunc}[1]{m(#1)}
+
+\newcommand{\kerndot}{k_{\theta}(\cdot, \cdot)}
+\newcommand{\kernx}{k_{\theta}(\x, \x')}
+\newcommand{\kernel}[2]{k_{\theta}(#1#2)}
+
+\newcommand{\var}{\textrm{var}}
+
+\newcommand{\Kaa}[1]{\mathbf{K}_{\mathbf{{#1}\mathbf{{#1}}}}}
+\newcommand{\Kab}[2]{\mathbf{K}_{\mathbf{{#1}\mathbf{{#2}}}}}
+\newcommand{\ka}[1]{\mathbf{k}_{\mathbf{{#1}}}}
+
+\newcommand{\Kxx}{\mathbf{K}_{\mathbf{\x\x}}}
+\newcommand{\KVV}{\mathbf{K}_{VV}}
+\newcommand{\Kstar}{\mathbf{K}_{\star\star}}
+\newcommand{\Kxstar}{K_{\mathbf{x}\star}}
+
+\newcommand{\Kxf}{\mathbf{K}_{\mathbf{*f}}}
+\newcommand{\Kfx}{\mathbf{K}_{\mathbf{f*}}}
+\newcommand{\Kff}{\mathbf{K}_{\mathbf{ff}}}
+\newcommand{\Kuu}{\mathbf{K}_{\mathbf{uu}}}
+\newcommand{\Kzz}{\mathbf{K}_{\mathbf{\mathbf{zz}}}}
+\newcommand{\Kzx}{\mathbf{K}_{\mathbf{z x}}}
+\newcommand{\Kxz}{\mathbf{K}_{\mathbf{x z}}}
+\newcommand{\Kxu}{\mathbf{K}_{\mathbf{* u}}}
+\newcommand{\Kux}{\mathbf{K}_{\mathbf{u *}}}
+
+\newcommand{\kvecT}[2]{\mathbf{k}^T_{#1}({#2})}
+\newcommand{\kvec}[2]{\mathbf{k}_{#1}({#2})}
+
+\newcommand{\Dxx}{\mathbf{D}_{\x\x}}
+\newcommand{\cxx}{\mathbf{c}_{\x\x}}
+\newcommand{\Qxx}{\mathbf{Q}_{\x \x}}
+\newcommand{\Qxz}{\mathbf{Q}_{\x \z}}
+\newcommand{\Qzx}{\mathbf{Q}_{\z \x}}
+\newcommand{\Qzz}{\mathbf{Q}_{\z \z}}
+
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\coreg}[2]{\mathbf{B}_{{#1}, {#2}}}
+\newcommand{\corega}{\mathbf{a}}
+\newcommand{\coregf}{\mathbf{f}}
+
+\newcommand{\sr}{\mathbf{s}_r}
+\newcommand{\btau}{\boldsymbol{\tau}}
+\newcommand{\bomega}{\boldsymbol{\omega}}
+\newcommand{\khat}[1]{\Tilde{k}(#1)}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+
+\newcommand{\posterior}{p(\theta | x)}
+\newcommand{\joint}{p(\theta, x)}
+\newcommand{\marginal}{p(x)}
+\newcommand{\prior}{p(\theta)}
+\newcommand{\likelihood}{p(x | \theta)}
+\newcommand{\Q}{\mathcal{Q}}
+\newcommand{\Qapprox}{q(\lambda)}
+\newcommand{\Qoptimal}{q^*(\lambda)}
+\newcommand{\KL}{\text{KL}}
+\newcommand{\ELBO}{\text{ELBO}}
+\newcommand{\elbo}{\text{ELBO}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\varParam}{\xi}
+
+
+\newcommand{\pmtwo}{PM\textsubscript{2.5} }
+\newcommand{\pmten}{PM\textsubscript{10} }
+\newcommand{\sulfurotwo}{SO\textsubscript{2} }
+\newcommand{\notwo}{NO\textsubscript{2} }
+\newcommand{\othree}{O\textsubscript{3}}
+
+
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bk}{\mathbf k}
+\newcommand{\bM}{\mathbf M}
+\newcommand{\bX}{\mathbf X}
+\newcommand{\f}{\mathbf{f}}
+\newcommand{\given}{\,|\,}
+\newcommand{\btheta}{\boldsymbol\theta}
+\newcommand{\bzeta}{\boldsymbol\zeta}
+\newcommand{\bphi}{\boldsymbol\phi}
+\newcommand{\bpsi}{\boldsymbol\psi}
+\newcommand{\brho}{\boldsymbol\rho}
+\newcommand{\bSigma}{\boldsymbol\Sigma}
+\newcommand{\infint}{\int_{-\infty}^\infty}
+
+\newcommand{\bV}{\mathbf V}
+\newcommand{\bv}{\mathbf v}
+\newcommand{\bgamma}{\boldsymbol \gamma}
+\renewcommand{\d}{\textrm d}
+\newcommand{\bH}{\mathbf H}
+\newcommand{\bg}{\mathbf g}
+\newcommand{\bA}{\textbf A}
+\newcommand{\bI}{\textbf I}
+
+
+
+\newcommand{\leftjust}[1]{\parbox{\linewidth}{#1}}
+\newcommand{\particle}{\lambda}
+\newcommand{\bparticle}{\boldsymbol\lambda}
+\newcommand{\Particle}{\Lambda}
+
+
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cHk}{\mathcal{H}_{k}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\bm}{\mathbf{m}}
+
+
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbN}{\mathbb{N}}
+
+
+
+\newcommand\iidsim{\stackrel{\mathclap{iid}}{\sim}}
+\renewcommand{\likelihood}{p(\mathbf{X}\given\theta)}
+\newcommand{\marginalLL}{p(\mathbf{X})}
+\renewcommand{\posterior}{p(\theta\given\mathbf{X})}
+\newcommand{\posteriorPred}{p(\mathbf{x}'\given\mathbf{X})}
+\renewcommand{\prior}{p_{0}(\theta)}
+
+\renewcommand{\KL}{\operatorname{KL}}
+\renewcommand{\ELBO}{\operatorname{ELBO}}
+\renewcommand{\elbo}{\operatorname{ELBO}}
+
+\newcommand{\TruePos}{\operatorname{TP}}
+\newcommand{\FalsePos}{\operatorname{FP}}
+\newcommand{\TrueNeg}{\operatorname{TN}}
+\newcommand{\FalseNeg}{\operatorname{FN}}
+
+\DeclareMathOperator*{\minimise}{minimise}
+\newcommand{\domain}[1]{\operatorname{dom}{#1}}
+
+\newcommand{\million}{\textrm{MM}}
